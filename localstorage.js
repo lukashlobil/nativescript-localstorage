@@ -9,12 +9,12 @@
 const FileSystemAccess = require('file-system/file-system-access').FileSystemAccess;
 
 if (!global.localStorage) {
-    let localStorageData = {};
-    let localStorageTimeout = null;
+    var localStorageData = {};
+    var localStorageTimeout = null;
 
     const internalSaveData = function() {
-        let fsa = new FileSystemAccess();
-        let fileName = fsa.getDocumentsFolderPath() + "/localStorage.db";
+        var fsa = new FileSystemAccess();
+        var fileName = fsa.getDocumentsFolderPath() + "/localStorage.db";
         try {
             fsa.writeText(fileName, JSON.stringify(localStorageData));
         } catch (err) {
@@ -32,15 +32,15 @@ if (!global.localStorage) {
     };
 
     const loadData = function() {
-        let fsa = new FileSystemAccess();
-        let fileName = fsa.getDocumentsFolderPath() + "/localStorage.db";
+        var fsa = new FileSystemAccess();
+        var fileName = fsa.getDocumentsFolderPath() + "/localStorage.db";
         if (!fsa.fileExists(fileName)) {
             return;
         }
 
-        let data;
+        var data;
         try {
-            let textData = fsa.readText(fileName);
+            var textData = fsa.readText(fileName);
             data = JSON.parse(textData);
             localStorageData = data;
         }
@@ -90,7 +90,7 @@ if (!global.localStorage) {
 
 
 if (!global.sessionStorage) {
-    let sessionStorageData = {};
+    var sessionStorageData = {};
 
     global.sessionStorage = {
         getItem: function (name) {
@@ -109,7 +109,7 @@ if (!global.sessionStorage) {
         },
         removeItem: function (name) {
             if (sessionStorageData[name]) {
-                delete sessionStorageData[name];
+                devare sessionStorageData[name];
             }
         },
         clear: function () {
