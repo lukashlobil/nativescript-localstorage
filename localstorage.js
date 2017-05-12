@@ -109,7 +109,7 @@ if (!global.sessionStorage) {
         },
         removeItem: function (name) {
             if (sessionStorageData[name]) {
-                devare sessionStorageData[name];
+                delete sessionStorageData[name];
             }
         },
         clear: function () {
